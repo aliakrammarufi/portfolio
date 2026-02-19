@@ -3,1080 +3,184 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ali Akram Marufi | Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {}
-      }
-    }
-  </script>
+  <title>Under Maintenance</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="/_sdk/element_sdk.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;family=Outfit:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
-    body {
-      box-sizing: border-box;
-    }
-    * {
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Outfit', 'Poppins', sans-serif;
-    }
-    
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Animated gradient background */
-    .hero-gradient {
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f8fafc 100%);
-      background-size: 200% 200%;
-      animation: gradientShift 20s ease infinite;
-      position: relative;
-    }
-    
-    .dark .hero-gradient {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-    }
-    
-    .hero-gradient::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 50%, rgba(147, 51, 234, 0.08) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    
-    .dark .hero-gradient::before {
-      background: radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 50%);
-    }
-    
-    @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-    
-    /* Glass morphism effect */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .dark .glass-card {
-      background: rgba(30, 41, 59, 0.4);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(71, 85, 105, 0.3);
-    }
-    
-    /* Gradient text effect */
-    .gradient-text {
-      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      background-size: 200% 200%;
-      animation: gradientShift 8s ease infinite;
-    }
-    
-    .dark .gradient-text {
-      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    /* Elegant underline */
-    .elegant-underline {
-      position: relative;
-      display: inline-block;
-    }
-    
-    .elegant-underline::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, #0ea5e9, #06b6d4);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-    
-    .elegant-underline:hover::after {
-      transform: scaleX(1);
-    }
-    
-    /* Floating animation for profile */
-    .float {
-      animation: float 6s ease-in-out infinite;
-    }
-    
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
     }
-    
-    /* Pulse animation for badges */
-    .pulse-ring {
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
     }
-    
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
-    
-    /* Enhanced card hover effects */
-    .card-hover {
-      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-      position: relative;
-      overflow: hidden;
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
     }
-    
-    .card-hover::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.08), transparent);
-      transition: left 0.6s ease;
+    .pulse-glow {
+      animation: pulse-glow 3s ease-in-out infinite;
     }
-    
-    .card-hover:hover::before {
-      left: 100%;
-    }
-    
-    .card-hover:hover {
-      transform: translateY(-12px) scale(1.01);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(14, 165, 233, 0.2);
-    }
-    
-    .dark .card-hover:hover {
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(14, 165, 233, 0.3);
-    }
-    
-    /* Elevated button effect */
-    .btn-elevated {
-      position: relative;
-      transform-style: preserve-3d;
-      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    
-    .btn-elevated::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: inherit;
-      transform: translateZ(-20px);
-      opacity: 0.6;
-      filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-    
-    .btn-elevated:hover {
-      transform: translateY(-4px);
-    }
-    
-    .btn-elevated:hover::before {
-      opacity: 0.9;
-      transform: translateZ(-25px);
-    }
-    
-    /* Fade in animations with better timing */
-    .fade-in {
-      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-      opacity: 0;
-    }
-    
-    @keyframes fadeInUp {
-      from { 
-        opacity: 0; 
-        transform: translateY(30px);
-      }
-      to { 
-        opacity: 1; 
-        transform: translateY(0);
-      }
-    }
-    
-    .fade-in-left {
-      animation: fadeInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-      opacity: 0;
-    }
-    
-    @keyframes fadeInLeft {
-      from { 
-        opacity: 0; 
-        transform: translateX(-30px);
-      }
-      to { 
-        opacity: 1; 
-        transform: translateX(0);
-      }
-    }
-    
-    .fade-in-right {
-      animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-      opacity: 0;
-    }
-    
-    @keyframes fadeInRight {
-      from { 
-        opacity: 0; 
-        transform: translateX(30px);
-      }
-      to { 
-        opacity: 1; 
-        transform: translateX(0);
-      }
-    }
-    
-    .stagger-1 { animation-delay: 0.1s; }
-    .stagger-2 { animation-delay: 0.2s; }
-    .stagger-3 { animation-delay: 0.3s; }
-    .stagger-4 { animation-delay: 0.4s; }
-    .stagger-5 { animation-delay: 0.5s; }
-    .stagger-6 { animation-delay: 0.6s; }
-    
-    /* Shimmer effect for stats */
-    .shimmer {
-      background: linear-gradient(90deg, #0ea5e9 0%, #06b6d4 50%, #14b8a6 100%);
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shimmer 4s linear infinite;
-    }
-    
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
-    
-    /* Sophisticated badge */
-    .badge-elegant {
-      background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(6, 182, 212, 0.1));
-      border: 1px solid rgba(14, 165, 233, 0.3);
-      backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .badge-elegant::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      transform: rotate(45deg);
-      animation: badgeShine 3s ease-in-out infinite;
-    }
-    
-    @keyframes badgeShine {
-      0%, 100% { transform: translateX(-100%) rotate(45deg); }
-      50% { transform: translateX(100%) rotate(45deg); }
-    }
-    
-    /* Icon rotation on hover */
-    .rotate-on-hover {
-      transition: transform 0.3s ease;
-    }
-    
-    .card-hover:hover .rotate-on-hover {
-      transform: rotate(360deg);
-    }
-    
-    /* Glowing effect for current badge */
-    .glow {
-      animation: glow 2s ease-in-out infinite;
-    }
-    
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 5px rgba(34, 197, 94, 0.5); }
-      50% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.8); }
-    }
-    
-    /* Smooth button transitions */
-    .btn-primary {
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
-    }
-    
-    .btn-primary:hover::after {
-      width: 300px;
-      height: 300px;
-    }
-    
-    /* Parallax effect helper */
-    .parallax {
-      transition: transform 0.2s ease-out;
-    }
-
-    /* Intro Screen Animations */
-    .intro-element {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .intro-logo {
-      animation: fadeInScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
-    }
-
-    .intro-name {
-      animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
-    }
-
-    .intro-title {
-      animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1s forwards;
-    }
-
-    .intro-progress {
-      animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1.4s forwards;
-    }
-
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    /* Progress bar animation */
-    .progress-bar {
-      width: 0;
-      animation: progressLoad 2s ease-out 2s forwards;
-    }
-
-    @keyframes progressLoad {
-      to {
-        width: 100%;
-      }
-    }
-
-    /* Intro screen fade out */
-    .intro-fade-out {
-      animation: fadeOutUp 0.8s cubic-bezier(0.4, 0, 1, 1) forwards;
-    }
-
-    @keyframes fadeOutUp {
-      to {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-    }
-
-    /* Main content fade in */
-    .main-fade-in {
-      animation: mainFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    @keyframes mainFadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Modal styles */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .modal-overlay.active {
-      opacity: 1;
-    }
-
-    .modal-content {
-      background: white;
-      border-radius: 24px;
-      max-width: 900px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      transform: scale(0.9) translateY(20px);
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-    }
-
-    .dark .modal-content {
-      background: #1e293b;
-    }
-
-    .modal-overlay.active .modal-content {
-      transform: scale(1) translateY(0);
-    }
-
-    /* Custom scrollbar for modal */
-    .modal-content::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    .modal-content::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .modal-content::-webkit-scrollbar-thumb {
-      background: rgba(59, 130, 246, 0.3);
-      border-radius: 10px;
-    }
-
-    .modal-content::-webkit-scrollbar-thumb:hover {
-      background: rgba(59, 130, 246, 0.5);
+    .spin-slow {
+      animation: spin-slow 20s linear infinite;
     }
   </style>
-  <style>@view-transition { navigation: auto; }</style>
+  <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
- <body class="h-full bg-white text-gray-800 overflow-hidden"><!-- Animated Intro Screen -->
-  <div id="intro-screen" class="fixed inset-0 z-[9999] flex items-center justify-center hero-gradient overflow-hidden"><!-- Minimal animated orb -->
-   <div class="absolute inset-0 flex items-center justify-center">
-    <div class="w-96 h-96 bg-gradient-to-br from-sky-500/30 via-cyan-500/20 to-teal-500/30 rounded-full blur-3xl animate-pulse"></div>
-   </div>
-   <div class="relative z-10 text-center px-6 max-w-4xl"><!-- Simple Monogram -->
-    <div class="intro-element intro-logo mb-12">
-     <div class="relative inline-block">
-      <div class="w-32 h-32 mx-auto rounded-2xl bg-gradient-to-br from-sky-500 via-cyan-500 to-teal-500 flex items-center justify-center shadow-2xl"><span class="text-6xl font-black text-white">AM</span>
-      </div>
-     </div>
-    </div><!-- Name -->
-    <h1 class="intro-element intro-name text-7xl lg:text-8xl font-black text-white mb-4 tracking-tight">Ali Marufi</h1><!-- Title -->
-    <p class="intro-element intro-title text-2xl text-sky-200 mb-16 font-medium">Aspiring Salesforce Administrator</p><!-- Progress Bar -->
-    <div class="intro-element intro-progress">
-     <div class="max-w-xs mx-auto">
-      <div class="h-1 bg-white/10 rounded-full overflow-hidden">
-       <div class="progress-bar h-full bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400"></div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
-  <div id="main-content" class="w-full min-h-full opacity-0"><!-- Navigation -->
-   <nav class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-slate-700/50 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex justify-between items-center">
-     <div class="font-bold text-xl sm:text-2xl bg-gradient-to-r from-sky-600 to-cyan-600 bg-clip-text text-transparent">
-      AM
-     </div><!-- Desktop Navigation -->
-     <div class="hidden lg:flex items-center gap-10"><a href="#home" class="elegant-underline text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a> <a href="#trailblazer" class="elegant-underline text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Trailblazer</a> <a href="#education" class="elegant-underline text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Education</a> <a href="#projects" class="elegant-underline text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a> <a href="#contact" class="elegant-underline text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a> <!-- Theme Toggle Button --> <button id="theme-toggle" class="w-11 h-11 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg" aria-label="Toggle theme">
-       <svg id="theme-icon-light" class="w-5 h-5 text-gray-700 dark:hidden" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-       </svg>
-       <svg id="theme-icon-dark" class="w-5 h-5 text-blue-400 hidden dark:block" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-       </svg></button>
-     </div><!-- Mobile Menu Button & Theme Toggle -->
-     <div class="flex lg:hidden items-center gap-3"><button id="theme-toggle-mobile" class="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center transition-all duration-300 shadow-lg" aria-label="Toggle theme">
-       <svg class="w-5 h-5 text-gray-700 dark:hidden" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-       </svg>
-       <svg class="w-5 h-5 text-blue-400 hidden dark:block" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-       </svg></button> <button id="mobile-menu-btn" class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-100 to-cyan-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center transition-all duration-300 shadow-lg" aria-label="Toggle menu">
-       <svg id="menu-open-icon" class="w-6 h-6 text-sky-700 dark:text-sky-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-       </svg>
-       <svg id="menu-close-icon" class="w-6 h-6 text-sky-700 dark:text-sky-400 hidden" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-       </svg></button>
-     </div>
-    </div><!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-700">
-     <div class="px-4 py-4 space-y-3"><a href="#home" class="mobile-menu-link block px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-sky-50 dark:hover:bg-slate-800 rounded-xl transition-colors">Home</a> <a href="#trailblazer" class="mobile-menu-link block px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-sky-50 dark:hover:bg-slate-800 rounded-xl transition-colors">Trailblazer</a> <a href="#education" class="mobile-menu-link block px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-sky-50 dark:hover:bg-slate-800 rounded-xl transition-colors">Education</a> <a href="#projects" class="mobile-menu-link block px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-sky-50 dark:hover:bg-slate-800 rounded-xl transition-colors">Projects</a> <a href="#contact" class="mobile-menu-link block px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-sky-50 dark:hover:bg-slate-800 rounded-xl transition-colors">Contact</a>
-     </div>
-    </div>
-   </nav><!-- Hero Section -->
-   <section id="home" class="hero-gradient pt-24 sm:pt-32 lg:pt-36 pb-20 sm:pb-28 lg:pb-32 px-4 sm:px-6 relative overflow-hidden"><!-- Decorative animated orbs -->
-    <div class="absolute top-20 right-10 w-64 sm:w-96 h-64 sm:h-96 bg-sky-500/20 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute bottom-20 left-10 w-64 sm:w-96 h-64 sm:h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-    <div class="max-w-7xl mx-auto relative z-10">
-     <div class="flex flex-col items-center text-center"><!-- Profile Photo with Sophisticated Border -->
-      <div class="fade-in stagger-1 mb-6 sm:mb-8">
-       <div class="relative">
-        <div class="absolute -inset-3 sm:-inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-20 dark:opacity-30 animate-pulse"></div>
-        <div class="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1">
-         <div class="w-full h-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden shadow-2xl">
-          <svg class="w-16 h-16 sm:w-20 sm:h-20 text-gray-300 dark:text-sky-400/40" fill="currentColor" viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-          </svg>
-         </div>
-        </div>
-       </div>
-      </div><!-- Hero Content -->
-      <div class="max-w-4xl">
-       <div class="fade-in stagger-2 inline-block px-4 sm:px-6 py-2 rounded-full bg-blue-50 dark:bg-white/10 border border-blue-200 dark:border-white/20 backdrop-blur-sm mb-4 sm:mb-6">
-        <p class="text-xs sm:text-sm font-semibold tracking-wider text-blue-600 dark:text-sky-300 uppercase">Welcome to my portfolio</p>
-       </div>
-       <h1 id="hero-name" class="fade-in stagger-3 text-3xl sm:text-5xl lg:text-7xl font-black text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight tracking-tight px-4">Ali Akram <span class="gradient-text">Marufi</span></h1>
-       <p id="hero-title" class="fade-in stagger-4 text-base sm:text-xl lg:text-2xl text-gray-700 dark:text-sky-200/90 mb-6 sm:mb-8 font-medium leading-relaxed px-4">Aspiring Salesforce Administrator | Customer Service &amp; Retail-Ready Professional</p>
-       <p id="hero-intro" class="fade-in stagger-5 text-gray-600 dark:text-slate-300/80 text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12 px-4">Detail-oriented, fast-learning professional preparing for a Salesforce Administration career while actively building practical experience in Canadian retail and customer service environments. Focused on delivering reliable work, learning quickly, and contributing to teams with strong communication, organization, and technical understanding.</p><!-- CTA Buttons -->
-       <div class="fade-in stagger-6 flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-stretch sm:items-center px-4"><a href="#projects" id="projects-button" class="btn-elevated group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-sm sm:text-base rounded-2xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-2xl shadow-blue-500/30">
-         <svg class="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-         </svg><span>View Salesforce Projects</span> </a> <a href="#" id="resume-button" class="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-10 py-4 sm:py-5 bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white font-bold text-sm sm:text-base rounded-2xl border-2 border-gray-300 dark:border-white/30 hover:bg-gray-200 dark:hover:bg-white/20 hover:border-gray-400 dark:hover:border-white/50 transition-all duration-300 backdrop-blur-sm">
-         <svg class="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-y-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-         </svg><span>Download Resume</span> </a>
-       </div>
-      </div>
-     </div>
-    </div><!-- Scroll indicator -->
-    <div class="hidden sm:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-     <svg class="w-6 h-6 text-gray-400 dark:text-white/50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+ <body class="h-full">
+  <div id="app-wrapper" class="w-full h-full overflow-auto" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); font-family: 'Space Grotesk', sans-serif;"><!-- Decorative background elements -->
+   <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full pulse-glow" style="background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full pulse-glow" style="background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%); animation-delay: 1.5s;"></div>
+    <div class="absolute top-10 right-10 w-64 h-64 spin-slow opacity-20">
+     <svg viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="#60a5fa" stroke-width="0.5" stroke-dasharray="4 4" /> <circle cx="50" cy="50" r="35" stroke="#a78bfa" stroke-width="0.5" stroke-dasharray="2 6" /> <circle cx="50" cy="50" r="25" stroke="#60a5fa" stroke-width="0.5" stroke-dasharray="1 3" />
      </svg>
     </div>
-   </section><!-- Divider -->
-   <div class="max-w-6xl mx-auto px-6">
-    <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-   </div><!-- Trailblazer Profile Section -->
-   <section id="trailblazer" class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 bg-gradient-to-b from-white via-gray-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto">
-     <div class="text-center mb-10 sm:mb-16">
-      <div class="fade-in stagger-1 inline-block px-4 sm:px-5 py-2 rounded-full badge-elegant mb-4 sm:mb-5">
-       <p class="text-xs sm:text-sm font-bold tracking-wider text-blue-600 dark:text-blue-400 uppercase">Salesforce Credentials</p>
+   </div><!-- Main content -->
+   <main class="relative z-10 flex flex-col items-center justify-center min-h-full px-6 py-12"><!-- Animated icon -->
+    <div class="float-animation mb-8">
+     <div class="relative">
+      <div class="w-32 h-32 rounded-3xl flex items-center justify-center" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);">
+       <svg class="w-16 h-16 text-white" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+       </svg>
+      </div><!-- Decorative dots -->
+      <div class="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-blue-400 opacity-80"></div>
+      <div class="absolute -bottom-3 -left-3 w-6 h-6 rounded-full bg-purple-400 opacity-60"></div>
+     </div>
+    </div><!-- Text content -->
+    <div class="text-center max-w-2xl">
+     <h1 id="main-title" class="text-5xl md:text-6xl font-bold mb-4" style="background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Under Maintenance</h1>
+     <p id="subtitle" class="text-2xl md:text-3xl font-medium mb-6" style="color: #60a5fa;">We'll be back soon!</p>
+     <p id="description" class="text-lg md:text-xl leading-relaxed mb-10" style="color: #94a3b8;">We're currently performing scheduled maintenance to improve your experience. Thank you for your patience.</p><!-- Progress indicator -->
+     <div class="flex flex-col items-center gap-4 mb-10">
+      <div class="flex items-center gap-3">
+       <div class="w-3 h-3 rounded-full bg-blue-500 animate-pulse"></div><span class="text-sm font-medium" style="color: #60a5fa;">Maintenance in progress</span>
       </div>
-      <h2 class="fade-in stagger-2 text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white mb-3 sm:mb-5 tracking-tight px-4">My Trailblazer Profile</h2>
-      <p class="fade-in stagger-3 text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-6 sm:mb-8 px-4">View my Salesforce learning journey, badges, and certifications on Trailhead.</p><a href="https://trailblazer.me/id/aliakrammarufi" target="_blank" rel="noopener noreferrer" class="fade-in stagger-4 elegant-underline inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold hover:text-blue-700 dark:hover:text-blue-300 transition-colors text-base sm:text-lg"> <span>Visit Full Profile</span>
-       <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-       </svg></a>
-     </div><!-- Trailblazer Profile Card with Glass Effect -->
-     <div class="fade-in stagger-5 card-hover glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 max-w-3xl mx-auto border border-gray-200/50 dark:border-slate-700/50 shadow-2xl">
-      <div class="flex flex-col items-center text-center"><!-- Trailhead Logo with Glow -->
-       <div class="relative mb-6 sm:mb-8">
-        <div class="absolute -inset-3 sm:-inset-4 bg-gradient-to-r from-sky-400 to-cyan-600 rounded-2xl blur-2xl opacity-20"></div>
-        <div class="relative w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-[#00a1e0] to-[#0ea5e9] rounded-2xl flex items-center justify-center shadow-2xl rotate-on-hover">
-         <svg class="w-14 h-14 sm:w-20 sm:h-20 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-         </svg>
-        </div>
-       </div><!-- Profile Info -->
-       <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2 px-4">Ali Akram Marufi</h3>
-       <p class="text-gray-600 dark:text-gray-400 text-base sm:text-lg mb-8 sm:mb-10">Salesforce Trailblazer</p><!-- Stats Grid with Enhanced Shimmer -->
-       <div class="grid grid-cols-3 gap-6 sm:gap-10 w-full mb-8 sm:mb-12 py-6 sm:py-8 border-y border-gray-200/50 dark:border-slate-700/50">
-        <div class="text-center">
-         <div class="shimmer text-3xl sm:text-5xl font-black mb-1 sm:mb-2">
-          42
-         </div>
-         <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-semibold uppercase tracking-wider">Badges</p>
-        </div>
-        <div class="text-center">
-         <div class="shimmer text-3xl sm:text-5xl font-black mb-1 sm:mb-2">
-          15,225
-         </div>
-         <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-semibold uppercase tracking-wider">Points</p>
-        </div>
-        <div class="text-center">
-         <div class="shimmer text-3xl sm:text-5xl font-black mb-1 sm:mb-2">
-          5
-         </div>
-         <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-semibold uppercase tracking-wider">Trails</p>
-        </div>
-       </div><!-- CTA Button with Elevation --> <a href="https://trailblazer.me/id/aliakrammarufi" target="_blank" rel="noopener noreferrer" class="btn-elevated group inline-flex items-center gap-3 sm:gap-4 px-8 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-[#00a1e0] to-[#0ea5e9] text-white font-bold text-sm sm:text-base lg:text-lg rounded-2xl hover:from-[#0ea5e9] hover:to-[#00a1e0] transition-all duration-300 shadow-2xl shadow-sky-500/30 w-full sm:w-auto">
-        <svg class="w-5 h-5 sm:w-7 sm:h-7 group-hover:rotate-12 transition-transform flex-shrink-0" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-        </svg><span>View My Trailblazer Profile</span>
-        <svg class="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg></a>
-       <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-500 mt-6 sm:mt-8 px-4">Click to see my complete learning journey on Trailhead</p>
+      <div class="w-64 h-2 rounded-full overflow-hidden" style="background: rgba(59, 130, 246, 0.2);">
+       <div class="h-full rounded-full" style="width: 65%; background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%); animation: pulse-glow 2s ease-in-out infinite;"></div>
+      </div>
+     </div><!-- Info cards -->
+     <div class="grid md:grid-cols-2 gap-4 max-w-lg mx-auto">
+      <div class="p-5 rounded-2xl" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2);">
+       <div class="flex items-center gap-3 mb-2">
+        <svg class="w-5 h-5" style="color: #60a5fa;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg><span class="font-semibold" style="color: #e2e8f0;">Expected Duration</span>
+       </div>
+       <p class="text-sm" style="color: #94a3b8;">Approximately 2-4 hours</p>
+      </div>
+      <div class="p-5 rounded-2xl" style="background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.2);">
+       <div class="flex items-center gap-3 mb-2">
+        <svg class="w-5 h-5" style="color: #a78bfa;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg><span class="font-semibold" style="color: #e2e8f0;">What's Happening</span>
+       </div>
+       <p class="text-sm" style="color: #94a3b8;">System upgrades &amp; optimizations</p>
       </div>
      </div>
     </div>
-   </section><!-- Divider -->
-   <div class="max-w-6xl mx-auto px-6">
-    <div class="h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-slate-700 to-transparent"></div>
-   </div><!-- Education Section -->
-   <section id="education" class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 bg-white dark:bg-slate-900 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto">
-     <div class="text-center mb-10 sm:mb-16">
-      <div class="fade-in stagger-1 inline-block px-4 sm:px-5 py-2 rounded-full badge-elegant mb-4 sm:mb-5">
-       <p class="text-xs sm:text-sm font-bold tracking-wider text-blue-600 dark:text-blue-400 uppercase">Academic Background</p>
-      </div>
-      <h2 class="fade-in stagger-2 text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white mb-3 sm:mb-5 tracking-tight px-4">Education</h2>
-      <p class="fade-in stagger-3 text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">My academic journey in Computer Science and Data Analytics.</p>
-     </div>
-     <div class="max-w-4xl mx-auto space-y-6 sm:space-y-8"><!-- Current Education -->
-      <div class="fade-in stagger-4 card-hover glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-sky-500/50 dark:border-sky-400/50 shadow-2xl relative overflow-hidden">
-       <div class="absolute top-4 sm:top-6 right-4 sm:right-6"><span class="glow inline-block px-3 sm:px-5 py-1.5 sm:py-2 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xs font-black rounded-full shadow-lg">CURRENT</span>
-       </div>
-       <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-8">
-        <div class="relative flex-shrink-0">
-         <div class="absolute -inset-2 bg-gradient-to-br from-sky-500 to-cyan-600 rounded-2xl blur opacity-40"></div>
-         <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-600 flex items-center justify-center flex-shrink-0 rotate-on-hover shadow-2xl">
-          <svg class="w-10 h-10 sm:w-12 sm:h-12 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-          </svg>
-         </div>
-        </div>
-        <div class="flex-1 mt-2 sm:mt-0">
-         <h3 class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white mb-2 sm:mb-3">Bachelor of Computer Application (BCA)</h3>
-         <p class="text-sky-600 dark:text-sky-400 font-bold mb-2 sm:mb-3 text-lg sm:text-xl">Amity University Online</p>
-         <p class="text-sm sm:text-base text-gray-700 dark:text-gray-400 mb-3 sm:mb-4 font-semibold">Specialization: Data Analytics</p>
-         <div class="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sky-600 dark:text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg><span class="font-bold">2023 - Present</span>
-         </div>
-        </div>
-       </div>
-      </div><!-- Previous Education -->
-      <div class="fade-in stagger-5 card-hover bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-gray-200 dark:border-slate-700 shadow-xl transition-colors duration-300">
-       <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-8">
-        <div class="relative flex-shrink-0">
-         <div class="absolute -inset-2 bg-gradient-to-br from-sky-500 to-cyan-600 rounded-2xl blur opacity-30"></div>
-         <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-600 flex items-center justify-center flex-shrink-0 rotate-on-hover shadow-2xl">
-          <svg class="w-10 h-10 sm:w-12 sm:h-12 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-         </div>
-        </div>
-        <div class="flex-1 mt-2 sm:mt-0">
-         <h3 class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white mb-2 sm:mb-3">Computer Science</h3>
-         <p class="text-sky-600 dark:text-sky-400 font-bold mb-2 sm:mb-3 text-lg sm:text-xl">Delhi University - ANDC College</p>
-         <p class="text-sm sm:text-base text-gray-700 dark:text-gray-400 mb-3 sm:mb-4 font-semibold">Foundation in Computer Science principles and programming</p>
-         <div class="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sky-600 dark:text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg><span class="font-bold">2021 - 2023</span>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Divider -->
-   <div class="max-w-6xl mx-auto px-6">
-    <div class="h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-slate-700 to-transparent"></div>
-   </div><!-- Projects Section -->
-   <section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 transition-colors duration-300">
-    <div class="max-w-6xl mx-auto"><!-- Section Header -->
-     <div class="text-center mb-10 sm:mb-16">
-      <p class="fade-in stagger-1 text-xs sm:text-sm font-semibold tracking-widest text-[#2563eb] dark:text-blue-400 uppercase mb-3 sm:mb-4">Portfolio</p>
-      <h2 id="projects-section-title" class="fade-in stagger-2 text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1e3a5f] dark:text-white mb-3 sm:mb-4 px-4">Salesforce Administrator Projects</h2>
-      <p class="fade-in stagger-3 text-gray-500 dark:text-gray-400 text-sm sm:text-base max-w-2xl mx-auto px-4">Hands-on projects demonstrating Salesforce administration skills in automation, security, and CRM configuration.</p>
-     </div><!-- Project Cards Grid -->
-     <div class="grid sm:grid-cols-2 gap-6 sm:gap-8"><!-- Project 1: Sales Pipeline Automation -->
-      <div data-project="sales-pipeline" class="project-card fade-in stagger-4 card-hover bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-slate-700 shadow-xl transition-colors duration-300 cursor-pointer">
-       <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#0c4a6e] to-[#0ea5e9] flex items-center justify-center mb-5 sm:mb-6 rotate-on-hover shadow-lg">
-        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-        </svg>
-       </div>
-       <div class="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-blue-50 dark:bg-blue-900 text-[#2563eb] dark:text-blue-300 text-xs font-bold rounded-full mb-3 sm:mb-4">
-        Sales Cloud
-       </div>
-       <h3 class="text-xl sm:text-2xl font-bold text-[#1e3a5f] dark:text-white mb-2 sm:mb-3">Sales Pipeline Automation</h3>
-       <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">Configured a complete Sales Cloud pipeline to support lead management, qualification, and opportunity tracking.</p>
-       <div class="space-y-2 sm:space-y-3">
-        <p class="text-xs sm:text-sm font-bold text-[#1e3a5f] dark:text-white">Key Deliverables:</p>
-        <ul class="space-y-1.5 sm:space-y-2.5">
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Lead → Account → Contact → Opportunity workflow</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Lead assignment rules by region</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Custom validation rules</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Automated email alerts</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Sales performance dashboard</li>
-        </ul>
-       </div>
-       <div class="mt-5 sm:mt-6 flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold text-sm sm:text-base"><span>View Full Case Study</span>
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-       </div>
-      </div><!-- Project 2: Service Cloud Case Management -->
-      <div data-project="service-cloud" class="project-card fade-in stagger-5 card-hover bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-slate-700 shadow-xl transition-colors duration-300 cursor-pointer">
-       <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#1e3a5f] to-[#2563eb] flex items-center justify-center mb-5 sm:mb-6 rotate-on-hover shadow-lg">
-        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-       </div>
-       <div class="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-blue-50 dark:bg-blue-900 text-[#2563eb] dark:text-blue-300 text-xs font-bold rounded-full mb-3 sm:mb-4">
-        Service Cloud
-       </div>
-       <h3 class="text-xl sm:text-2xl font-bold text-[#1e3a5f] dark:text-white mb-2 sm:mb-3">Service Cloud Case Management System</h3>
-       <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">Built a Service Cloud setup to streamline customer support operations.</p>
-       <div class="space-y-2 sm:space-y-3">
-        <p class="text-xs sm:text-sm font-bold text-[#1e3a5f] dark:text-white">Key Deliverables:</p>
-        <ul class="space-y-1.5 sm:space-y-2.5">
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Email-to-Case setup</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Queues and case assignment rules</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Auto-response messages</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Escalation rules</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Case resolution dashboard</li>
-        </ul>
-       </div>
-       <div class="mt-5 sm:mt-6 flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold text-sm sm:text-base"><span>View Full Case Study</span>
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-       </div>
-      </div><!-- Project 3: Flow Automation Suite -->
-      <div data-project="flow-automation" class="project-card fade-in stagger-6 card-hover bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-slate-700 shadow-xl transition-colors duration-300 cursor-pointer">
-       <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#1e3a5f] to-[#2563eb] flex items-center justify-center mb-5 sm:mb-6 rotate-on-hover shadow-lg">
-        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-        </svg>
-       </div>
-       <div class="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-blue-50 dark:bg-blue-900 text-[#2563eb] dark:text-blue-300 text-xs font-bold rounded-full mb-3 sm:mb-4">
-        Automation
-       </div>
-       <h3 class="text-xl sm:text-2xl font-bold text-[#1e3a5f] dark:text-white mb-2 sm:mb-3">Flow Automation Suite</h3>
-       <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">Created automation flows to reduce manual work and improve data accuracy.</p>
-       <div class="space-y-2 sm:space-y-3">
-        <p class="text-xs sm:text-sm font-bold text-[#1e3a5f] dark:text-white">Key Deliverables:</p>
-        <ul class="space-y-1.5 sm:space-y-2.5">
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Record-Triggered Flow</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Screen Flow</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Approval process automation</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Fault path error handling</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Flow documentation</li>
-        </ul>
-       </div>
-       <div class="mt-5 sm:mt-6 flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold text-sm sm:text-base"><span>View Full Case Study</span>
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-       </div>
-      </div><!-- Project 4: User Access & Security Model -->
-      <div data-project="security-model" class="project-card fade-in stagger-6 card-hover bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-slate-700 shadow-xl transition-colors duration-300 cursor-pointer">
-       <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#1e3a5f] to-[#2563eb] flex items-center justify-center mb-5 sm:mb-6 rotate-on-hover shadow-lg">
-        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-        </svg>
-       </div>
-       <div class="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-blue-50 dark:bg-blue-900 text-[#2563eb] dark:text-blue-300 text-xs font-bold rounded-full mb-3 sm:mb-4">
-        Security
-       </div>
-       <h3 class="text-xl sm:text-2xl font-bold text-[#1e3a5f] dark:text-white mb-2 sm:mb-3">User Access &amp; Security Model</h3>
-       <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">Designed a secure access model for user permissions and data visibility.</p>
-       <div class="space-y-2 sm:space-y-3">
-        <p class="text-xs sm:text-sm font-bold text-[#1e3a5f] dark:text-white">Key Deliverables:</p>
-        <ul class="space-y-1.5 sm:space-y-2.5">
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Profiles &amp; Permission Sets</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Role Hierarchy</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Field- and Object-level security</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Login IP restrictions</li>
-         <li class="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#2563eb] dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg> Sharing settings configuration</li>
-        </ul>
-       </div>
-       <div class="mt-5 sm:mt-6 flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold text-sm sm:text-base"><span>View Full Case Study</span>
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Divider -->
-   <div class="max-w-6xl mx-auto px-6">
-    <div class="h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-slate-700 to-transparent"></div>
-   </div><!-- Contact Section -->
-   <section id="contact" class="py-28 px-6 bg-white dark:bg-slate-900 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto">
-     <div class="text-center mb-16">
-      <div class="fade-in stagger-1 inline-block px-5 py-2 rounded-full badge-elegant mb-5">
-       <p class="text-sm font-bold tracking-wider text-blue-600 dark:text-blue-400 uppercase">Get In Touch</p>
-      </div>
-      <h2 class="fade-in stagger-2 text-4xl lg:text-5xl font-black text-gray-900 dark:text-white mb-5 tracking-tight">Let's Connect</h2>
-      <p class="fade-in stagger-3 text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">Interested in working together? Have a question about my Salesforce projects? Send me a message!</p>
-     </div>
-     <div class="max-w-3xl mx-auto">
-      <form id="contact-form" class="fade-in stagger-4 glass-card rounded-3xl p-10 border border-gray-200/50 dark:border-slate-700/50 shadow-2xl">
-       <div class="space-y-6"><!-- Name Input -->
-        <div><label for="contact-name" class="block text-sm font-bold text-gray-900 dark:text-white mb-2">Your Name</label> <input type="text" id="contact-name" name="name" required class="w-full px-5 py-4 bg-white dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-4 focus:ring-blue-500/20 transition-all duration-300 outline-none" placeholder="John Doe">
-         <p class="hidden text-sm text-red-500 mt-2" id="name-error">Please enter your name</p>
-        </div><!-- Email Input -->
-        <div><label for="contact-email" class="block text-sm font-bold text-gray-900 dark:text-white mb-2">Your Email</label> <input type="email" id="contact-email" name="email" required class="w-full px-5 py-4 bg-white dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-4 focus:ring-blue-500/20 transition-all duration-300 outline-none" placeholder="john@example.com">
-         <p class="hidden text-sm text-red-500 mt-2" id="email-error">Please enter a valid email address</p>
-        </div><!-- Subject Input -->
-        <div><label for="contact-subject" class="block text-sm font-bold text-gray-900 dark:text-white mb-2">Subject</label> <input type="text" id="contact-subject" name="subject" required class="w-full px-5 py-4 bg-white dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-4 focus:ring-blue-500/20 transition-all duration-300 outline-none" placeholder="Opportunity / Project Inquiry">
-         <p class="hidden text-sm text-red-500 mt-2" id="subject-error">Please enter a subject</p>
-        </div><!-- Message Textarea -->
-        <div><label for="contact-message" class="block text-sm font-bold text-gray-900 dark:text-white mb-2">Your Message</label> <textarea id="contact-message" name="message" required rows="6" class="w-full px-5 py-4 bg-white dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-4 focus:ring-blue-500/20 transition-all duration-300 outline-none resize-none" placeholder="Tell me about your project or opportunity..."></textarea>
-         <p class="hidden text-sm text-red-500 mt-2" id="message-error">Please enter your message</p>
-        </div><!-- Submit Button --> <button type="submit" id="submit-btn" class="btn-elevated w-full group inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-2xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-2xl shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-         <svg id="submit-icon" class="w-6 h-6 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-         </svg><span id="submit-text">Send Message</span> </button>
-       </div><!-- Success Message -->
-       <div id="success-message" class="hidden mt-6 p-6 bg-green-50 dark:bg-green-900/20 border-2 border-green-500 rounded-2xl">
-        <div class="flex items-center gap-3">
-         <svg class="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-         </svg>
-         <div>
-          <p class="font-bold text-green-900 dark:text-green-300">Message sent successfully!</p>
-          <p class="text-sm text-green-700 dark:text-green-400 mt-1">Thank you for reaching out. I'll get back to you soon!</p>
-         </div>
-        </div>
-       </div>
-      </form>
-     </div>
-    </div>
-   </section><!-- Footer -->
-   <footer class="py-12 px-6 bg-gray-100 dark:bg-slate-950 transition-colors duration-300">
-    <div class="max-w-6xl mx-auto text-center">
-     <div class="font-bold text-2xl text-gray-900 dark:text-white mb-4">
-      Ali Akram Marufi
-     </div>
-     <p class="text-gray-600 dark:text-sky-200 mb-6">Aspiring Salesforce Administrator</p>
-     <div class="flex justify-center gap-6 mb-8"><a href="#" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-white/10 flex items-center justify-center text-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-white/20 transition-colors">
-       <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-       </svg></a> <a href="#" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-white/10 flex items-center justify-center text-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-white/20 transition-colors">
-       <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-       </svg></a> <a href="mailto:contact@example.com" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-white/10 flex items-center justify-center text-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-white/20 transition-colors">
-       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-       </svg></a>
-     </div>
-     <p class="text-gray-500 dark:text-sky-300/60 text-sm">© 2025 Ali Akram Marufi. All rights reserved.</p>
-    </div>
+   </main><!-- Footer -->
+   <footer class="relative z-10 text-center py-6 px-6">
+    <p class="text-sm" style="color: #64748b;">Need urgent assistance? Contact us at <span class="font-medium" style="color: #60a5fa;">support@example.com</span></p>
    </footer>
-  </div><!-- Project Modal -->
-  <div id="project-modal" class="modal-overlay hidden">
-   <div class="modal-content">
-    <div class="p-8 lg:p-12"><!-- Close Button -->
-     <div class="flex justify-end mb-6"><button id="close-modal" class="w-12 h-12 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 flex items-center justify-center transition-colors">
-       <svg class="w-6 h-6 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-       </svg></button>
-     </div><!-- Modal Content -->
-     <div id="modal-body"><!-- Content will be dynamically inserted here -->
-     </div>
-    </div>
-   </div>
   </div>
   <script>
-    // Intro Screen Animation Sequence
-    const introScreen = document.getElementById('intro-screen');
-    const mainContent = document.getElementById('main-content');
-    
-    // Total intro duration: 4.5 seconds
-    setTimeout(() => {
-      // Fade out intro
-      introScreen.classList.add('intro-fade-out');
-      
-      // After fade out, show main content
-      setTimeout(() => {
-        introScreen.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        mainContent.classList.add('main-fade-in');
-      }, 800); // Match fade out duration
-    }, 4500); // 4.5 seconds total intro time
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuOpenIcon = document.getElementById('menu-open-icon');
-    const menuCloseIcon = document.getElementById('menu-close-icon');
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-
-    // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuOpenIcon.classList.toggle('hidden');
-      menuCloseIcon.classList.toggle('hidden');
-    });
-
-    // Close mobile menu when clicking a link
-    mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuOpenIcon.classList.remove('hidden');
-        menuCloseIcon.classList.add('hidden');
-      });
-    });
-
-    // Mobile theme toggle
-    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-    
-    themeToggleMobile.addEventListener('click', function() {
-      html.classList.toggle('dark');
-      
-      // Save theme preference
-      const theme = html.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', theme);
-    });
-    
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    if (currentTheme === 'dark') {
-      html.classList.add('dark');
-    }
-    
-    themeToggle.addEventListener('click', function() {
-      html.classList.toggle('dark');
-      
-      // Save theme preference
-      const theme = html.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', theme);
-    });
-    
-    // Default configuration
     const defaultConfig = {
-      hero_name: "Ali Akram Marufi",
-      hero_title: "Aspiring Salesforce Administrator | Customer Service & Retail-Ready Professional",
-      hero_intro: "Detail-oriented, fast-learning professional preparing for a Salesforce Administration career while actively building practical experience in Canadian retail and customer service environments. Focused on delivering reliable work, learning quickly, and contributing to teams with strong communication, organization, and technical understanding.",
-      projects_button_text: "View Salesforce Projects",
-      resume_button_text: "Download Resume",
-      projects_section_title: "Salesforce Administrator Projects",
-      background_color: "#ffffff",
-      primary_color: "#1e3a5f",
-      accent_color: "#2563eb",
-      text_color: "#374151",
-      surface_color: "#f9fafb"
+      main_title: 'Under Maintenance',
+      subtitle: "We'll be back soon!",
+      description: "We're currently performing scheduled maintenance to improve your experience. Thank you for your patience.",
+      background_color: '#0f172a',
+      accent_color: '#3b82f6',
+      text_color: '#e2e8f0',
+      secondary_text_color: '#94a3b8',
+      highlight_color: '#8b5cf6',
+      font_family: 'Space Grotesk',
+      font_size: 16
     };
 
-    // Current config state
-    let config = { ...defaultConfig };
+    async function onConfigChange(config) {
+      const mainTitle = document.getElementById('main-title');
+      const subtitle = document.getElementById('subtitle');
+      const description = document.getElementById('description');
 
-    // Update UI based on config
-    async function onConfigChange(cfg) {
-      config = { ...defaultConfig, ...cfg };
-      
-      // Update hero section
-      document.getElementById('hero-name').textContent = config.hero_name || defaultConfig.hero_name;
-      document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
-      document.getElementById('hero-intro').textContent = config.hero_intro || defaultConfig.hero_intro;
-      
-      // Update buttons
-      const projectsBtn = document.getElementById('projects-button');
-      const resumeBtn = document.getElementById('resume-button');
-      projectsBtn.querySelector('span').textContent = config.projects_button_text || defaultConfig.projects_button_text;
-      resumeBtn.querySelector('span').textContent = config.resume_button_text || defaultConfig.resume_button_text;
-      
-      // Update section title
-      document.getElementById('projects-section-title').textContent = config.projects_section_title || defaultConfig.projects_section_title;
-      
+      if (mainTitle) {
+        mainTitle.textContent = config.main_title || defaultConfig.main_title;
+      }
+      if (subtitle) {
+        subtitle.textContent = config.subtitle || defaultConfig.subtitle;
+      }
+      if (description) {
+        description.textContent = config.description || defaultConfig.description;
+      }
+
+      // Apply font changes
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      document.body.style.fontFamily = `${fontFamily}, sans-serif`;
+
+      // Apply font size scaling
+      const baseSize = config.font_size || defaultConfig.font_size;
+      if (mainTitle) mainTitle.style.fontSize = `${baseSize * 3.5}px`;
+      if (subtitle) subtitle.style.fontSize = `${baseSize * 1.75}px`;
+      if (description) description.style.fontSize = `${baseSize * 1.25}px`;
+
       // Apply colors
-      document.body.style.backgroundColor = config.background_color || defaultConfig.background_color;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const secondaryTextColor = config.secondary_text_color || defaultConfig.secondary_text_color;
+      const highlightColor = config.highlight_color || defaultConfig.highlight_color;
+
+      if (subtitle) subtitle.style.color = accentColor;
+      if (description) description.style.color = secondaryTextColor;
     }
 
-    // Map config to capabilities for color editing
-    function mapToCapabilities(cfg) {
+    function mapToCapabilities(config) {
       return {
         recolorables: [
           {
-            get: () => cfg.background_color || defaultConfig.background_color,
-            set: (value) => {
-              cfg.background_color = value;
-              if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
-            }
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
           },
           {
-            get: () => cfg.surface_color || defaultConfig.surface_color,
-            set: (value) => {
-              cfg.surface_color = value;
-              if (window.elementSdk) window.elementSdk.setConfig({ surface_color: value });
-            }
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => { config.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
           },
           {
-            get: () => cfg.text_color || defaultConfig.text_color,
-            set: (value) => {
-              cfg.text_color = value;
-              if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
-            }
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
           },
           {
-            get: () => cfg.primary_color || defaultConfig.primary_color,
-            set: (value) => {
-              cfg.primary_color = value;
-              if (window.elementSdk) window.elementSdk.setConfig({ primary_color: value });
-            }
+            get: () => config.secondary_text_color || defaultConfig.secondary_text_color,
+            set: (value) => { config.secondary_text_color = value; window.elementSdk.setConfig({ secondary_text_color: value }); }
           },
           {
-            get: () => cfg.accent_color || defaultConfig.accent_color,
-            set: (value) => {
-              cfg.accent_color = value;
-              if (window.elementSdk) window.elementSdk.setConfig({ accent_color: value });
-            }
+            get: () => config.highlight_color || defaultConfig.highlight_color,
+            set: (value) => { config.highlight_color = value; window.elementSdk.setConfig({ highlight_color: value }); }
           }
         ],
         borderables: [],
-        fontEditable: undefined,
-        fontSizeable: undefined
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+        }
       };
     }
 
-    // Map config to edit panel values
-    function mapToEditPanelValues(cfg) {
+    function mapToEditPanelValues(config) {
       return new Map([
-        ["hero_name", cfg.hero_name || defaultConfig.hero_name],
-        ["hero_title", cfg.hero_title || defaultConfig.hero_title],
-        ["hero_intro", cfg.hero_intro || defaultConfig.hero_intro],
-        ["projects_button_text", cfg.projects_button_text || defaultConfig.projects_button_text],
-        ["resume_button_text", cfg.resume_button_text || defaultConfig.resume_button_text],
-        ["projects_section_title", cfg.projects_section_title || defaultConfig.projects_section_title]
+        ['main_title', config.main_title || defaultConfig.main_title],
+        ['subtitle', config.subtitle || defaultConfig.subtitle],
+        ['description', config.description || defaultConfig.description]
       ]);
     }
 
-    // Initialize SDK
     if (window.elementSdk) {
       window.elementSdk.init({
         defaultConfig,
@@ -1084,392 +188,7 @@
         mapToCapabilities,
         mapToEditPanelValues
       });
-    } else {
-      onConfigChange(defaultConfig);
     }
-
-    // Smooth scroll for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // Contact Form Validation and Submission
-    const contactForm = document.getElementById('contact-form');
-    const nameInput = document.getElementById('contact-name');
-    const emailInput = document.getElementById('contact-email');
-    const subjectInput = document.getElementById('contact-subject');
-    const messageInput = document.getElementById('contact-message');
-    const submitBtn = document.getElementById('submit-btn');
-    const submitText = document.getElementById('submit-text');
-    const submitIcon = document.getElementById('submit-icon');
-    const successMessage = document.getElementById('success-message');
-
-    // Error message elements
-    const nameError = document.getElementById('name-error');
-    const emailError = document.getElementById('email-error');
-    const subjectError = document.getElementById('subject-error');
-    const messageError = document.getElementById('message-error');
-
-    // Email validation regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    // Validate individual field
-    function validateField(input, errorElement, validationFn) {
-      if (!validationFn(input.value)) {
-        input.classList.add('border-red-500');
-        input.classList.remove('border-gray-200', 'dark:border-slate-700');
-        errorElement.classList.remove('hidden');
-        return false;
-      } else {
-        input.classList.remove('border-red-500');
-        input.classList.add('border-gray-200', 'dark:border-slate-700');
-        errorElement.classList.add('hidden');
-        return true;
-      }
-    }
-
-    // Add real-time validation on blur
-    nameInput.addEventListener('blur', () => {
-      validateField(nameInput, nameError, (value) => value.trim() !== '');
-    });
-
-    emailInput.addEventListener('blur', () => {
-      validateField(emailInput, emailError, (value) => emailRegex.test(value.trim()));
-    });
-
-    subjectInput.addEventListener('blur', () => {
-      validateField(subjectInput, subjectError, (value) => value.trim() !== '');
-    });
-
-    messageInput.addEventListener('blur', () => {
-      validateField(messageInput, messageError, (value) => value.trim() !== '');
-    });
-
-    // Form submission
-    contactForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      // Validate all fields
-      const isNameValid = validateField(nameInput, nameError, (value) => value.trim() !== '');
-      const isEmailValid = validateField(emailInput, emailError, (value) => emailRegex.test(value.trim()));
-      const isSubjectValid = validateField(subjectInput, subjectError, (value) => value.trim() !== '');
-      const isMessageValid = validateField(messageInput, messageError, (value) => value.trim() !== '');
-
-      // If any field is invalid, stop submission
-      if (!isNameValid || !isEmailValid || !isSubjectValid || !isMessageValid) {
-        return;
-      }
-
-      // Show loading state
-      submitBtn.disabled = true;
-      submitText.textContent = 'Sending...';
-      submitIcon.innerHTML = '<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>';
-      submitIcon.classList.add('animate-spin');
-
-      // Simulate form submission (2 second delay)
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      // Hide loading state
-      submitBtn.disabled = false;
-      submitText.textContent = 'Send Message';
-      submitIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>';
-      submitIcon.classList.remove('animate-spin');
-
-      // Show success message
-      successMessage.classList.remove('hidden');
-      successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-      // Reset form
-      contactForm.reset();
-
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        successMessage.classList.add('hidden');
-      }, 5000);
-    });
-
-    // Project Modal Functionality
-    const projectModal = document.getElementById('project-modal');
-    const modalBody = document.getElementById('modal-body');
-    const closeModalBtn = document.getElementById('close-modal');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    // Project data with detailed case studies
-    const projectData = {
-      'sales-pipeline': {
-        title: 'Sales Pipeline Automation',
-        category: 'Sales Cloud',
-        icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
-        challenge: 'A growing B2B company was struggling with manual lead tracking, inconsistent follow-ups, and poor visibility into their sales pipeline. Sales reps were losing opportunities due to lack of automated processes.',
-        solution: 'Implemented a comprehensive Sales Cloud solution with automated workflows, intelligent lead routing, and real-time dashboards.',
-        impact: [
-          '40% reduction in lead response time',
-          '25% increase in conversion rates',
-          '60% improvement in forecast accuracy',
-          '50+ hours saved per month on manual data entry'
-        ],
-        features: [
-          {
-            title: 'Lead-to-Opportunity Workflow',
-            description: 'Built automated conversion process from Lead to Account, Contact, and Opportunity with proper relationship mapping'
-          },
-          {
-            title: 'Territory-Based Assignment',
-            description: 'Configured assignment rules to automatically route leads to sales reps based on geographic regions and product expertise'
-          },
-          {
-            title: 'Validation & Data Quality',
-            description: 'Created validation rules ensuring complete and accurate data entry at each pipeline stage'
-          },
-          {
-            title: 'Email Automation',
-            description: 'Set up automated email alerts for high-priority leads, stage changes, and overdue opportunities'
-          },
-          {
-            title: 'Performance Dashboard',
-            description: 'Built executive dashboard showing pipeline health, win rates, and individual rep performance metrics'
-          }
-        ],
-        techStack: ['Sales Cloud', 'Process Builder', 'Assignment Rules', 'Validation Rules', 'Email Templates', 'Reports & Dashboards']
-      },
-      'service-cloud': {
-        title: 'Service Cloud Case Management System',
-        category: 'Service Cloud',
-        icon: 'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z',
-        challenge: 'A customer support team was overwhelmed with incoming requests from multiple channels (email, phone, web), leading to slow response times and frustrated customers.',
-        solution: 'Deployed a Service Cloud case management system with multi-channel case creation, intelligent routing, and SLA-based escalation.',
-        impact: [
-          '70% faster case routing to correct teams',
-          '45% reduction in average case resolution time',
-          '90% customer satisfaction score increase',
-          'Eliminated manual case assignment'
-        ],
-        features: [
-          {
-            title: 'Email-to-Case Integration',
-            description: 'Configured automatic case creation from support emails with intelligent parsing of customer information'
-          },
-          {
-            title: 'Queue Management',
-            description: 'Set up specialized queues for Technical, Billing, and General Support with skill-based routing'
-          },
-          {
-            title: 'Auto-Response System',
-            description: 'Created personalized auto-response templates that acknowledge case receipt and set expectations'
-          },
-          {
-            title: 'Escalation Rules',
-            description: 'Built time-based escalation rules to automatically escalate unresolved cases to management'
-          },
-          {
-            title: 'Resolution Dashboard',
-            description: 'Designed manager dashboard tracking team performance, case backlog, and SLA compliance'
-          }
-        ],
-        techStack: ['Service Cloud', 'Email-to-Case', 'Case Queues', 'Assignment Rules', 'Escalation Rules', 'Email Templates', 'Dashboards']
-      },
-      'flow-automation': {
-        title: 'Flow Automation Suite',
-        category: 'Automation',
-        icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
-        challenge: 'Manual business processes were causing delays, data inconsistencies, and employee frustration. The organization needed to automate repetitive tasks while maintaining data integrity.',
-        solution: 'Developed a suite of Salesforce Flows covering record automation, user-guided processes, and approval workflows.',
-        impact: [
-          '80% reduction in manual data updates',
-          '100% elimination of process errors',
-          '30+ hours saved weekly across teams',
-          'Improved user adoption through intuitive screens'
-        ],
-        features: [
-          {
-            title: 'Record-Triggered Flows',
-            description: 'Built flows that automatically update related records, send notifications, and maintain data consistency when records are created or modified'
-          },
-          {
-            title: 'Screen Flows',
-            description: 'Created user-friendly guided processes for complex data entry tasks with conditional logic and validation'
-          },
-          {
-            title: 'Approval Process Automation',
-            description: 'Designed multi-level approval flows with automatic routing, reminders, and rejection handling'
-          },
-          {
-            title: 'Error Handling',
-            description: 'Implemented fault paths in all flows to gracefully handle errors and notify administrators'
-          },
-          {
-            title: 'Flow Documentation',
-            description: 'Maintained comprehensive documentation of all flows including logic diagrams and maintenance notes'
-          }
-        ],
-        techStack: ['Flow Builder', 'Record-Triggered Flows', 'Screen Flows', 'Approval Processes', 'Email Alerts', 'Process Documentation']
-      },
-      'security-model': {
-        title: 'User Access & Security Model',
-        category: 'Security',
-        icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
-        challenge: 'A rapidly growing company needed to establish proper data security and user access controls as they scaled from 20 to 200+ users across multiple departments.',
-        solution: 'Designed and implemented a comprehensive security architecture using Salesforce sharing model, profiles, permission sets, and role hierarchy.',
-        impact: [
-          '100% compliance with data privacy regulations',
-          'Zero unauthorized data access incidents',
-          'Streamlined onboarding for new users',
-          'Clear audit trail for all security changes'
-        ],
-        features: [
-          {
-            title: 'Profiles & Permission Sets',
-            description: 'Created role-based profiles for each job function and modular permission sets for additional access needs'
-          },
-          {
-            title: 'Role Hierarchy',
-            description: 'Designed multi-level role hierarchy reflecting organizational structure and ensuring proper data visibility'
-          },
-          {
-            title: 'Field & Object Security',
-            description: 'Configured field-level security to protect sensitive data and object-level permissions for each user type'
-          },
-          {
-            title: 'IP Restrictions',
-            description: 'Implemented login IP ranges for enhanced security and restricted access to corporate networks'
-          },
-          {
-            title: 'Sharing Settings',
-            description: 'Configured organization-wide defaults, sharing rules, and manual sharing to balance security with collaboration'
-          }
-        ],
-        techStack: ['Profiles', 'Permission Sets', 'Role Hierarchy', 'Sharing Settings', 'Field-Level Security', 'IP Restrictions', 'Security Health Check']
-      }
-    };
-
-    // Open modal with project details
-    function openProjectModal(projectKey) {
-      const project = projectData[projectKey];
-      if (!project) return;
-
-      modalBody.innerHTML = `
-        <div class="space-y-8">
-          <!-- Header -->
-          <div class="flex items-start gap-6">
-            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#1e3a5f] to-[#2563eb] flex items-center justify-center flex-shrink-0 shadow-2xl">
-              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${project.icon}"/>
-              </svg>
-            </div>
-            <div class="flex-1">
-              <div class="inline-block px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-[#2563eb] dark:text-blue-400 text-xs font-bold rounded-full mb-3">${project.category}</div>
-              <h2 class="text-3xl lg:text-4xl font-black text-gray-900 dark:text-white mb-2">${project.title}</h2>
-            </div>
-          </div>
-
-          <!-- Challenge -->
-          <div class="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 rounded-r-xl">
-            <h3 class="text-lg font-bold text-red-900 dark:text-red-400 mb-2">Challenge</h3>
-            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">${project.challenge}</p>
-          </div>
-
-          <!-- Solution -->
-          <div class="bg-blue-50 dark:bg-blue-900/10 border-l-4 border-blue-500 p-6 rounded-r-xl">
-            <h3 class="text-lg font-bold text-blue-900 dark:text-blue-400 mb-2">Solution</h3>
-            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">${project.solution}</p>
-          </div>
-
-          <!-- Impact -->
-          <div class="bg-green-50 dark:bg-green-900/10 border-l-4 border-green-500 p-6 rounded-r-xl">
-            <h3 class="text-lg font-bold text-green-900 dark:text-green-400 mb-3">Business Impact</h3>
-            <ul class="space-y-2">
-              ${project.impact.map(item => `
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  <span class="text-gray-700 dark:text-gray-300">${item}</span>
-                </li>
-              `).join('')}
-            </ul>
-          </div>
-
-          <!-- Features -->
-          <div>
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Key Features Implemented</h3>
-            <div class="space-y-4">
-              ${project.features.map((feature, index) => `
-                <div class="bg-gray-50 dark:bg-slate-800/50 rounded-xl p-6 border border-gray-200 dark:border-slate-700">
-                  <div class="flex items-start gap-4">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
-                      ${index + 1}
-                    </div>
-                    <div class="flex-1">
-                      <h4 class="font-bold text-gray-900 dark:text-white mb-2">${feature.title}</h4>
-                      <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">${feature.description}</p>
-                    </div>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-
-          <!-- Tech Stack -->
-          <div>
-            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Technologies Used</h3>
-            <div class="flex flex-wrap gap-2">
-              ${project.techStack.map(tech => `
-                <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm font-semibold rounded-lg">${tech}</span>
-              `).join('')}
-            </div>
-          </div>
-        </div>
-      `;
-
-      // Show modal with animation
-      projectModal.classList.remove('hidden');
-      setTimeout(() => {
-        projectModal.classList.add('active');
-      }, 10);
-
-      // Prevent body scroll
-      document.body.style.overflow = 'hidden';
-    }
-
-    // Close modal
-    function closeProjectModal() {
-      projectModal.classList.remove('active');
-      setTimeout(() => {
-        projectModal.classList.add('hidden');
-        document.body.style.overflow = '';
-      }, 300);
-    }
-
-    // Event listeners for project cards
-    projectCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const projectKey = card.getAttribute('data-project');
-        openProjectModal(projectKey);
-      });
-    });
-
-    // Close modal button
-    closeModalBtn.addEventListener('click', closeProjectModal);
-
-    // Close modal when clicking overlay
-    projectModal.addEventListener('click', (e) => {
-      if (e.target === projectModal) {
-        closeProjectModal();
-      }
-    });
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !projectModal.classList.contains('hidden')) {
-        closeProjectModal();
-      }
-    });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c6b8b73464591ce',t:'MTc2OTg4NzAwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d07f3c1d060899c',t:'MTc3MTUyNzA1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
